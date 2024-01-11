@@ -86,5 +86,91 @@ function plusFn(){
     const value2 = Number(num2.value)
     const value3 = Number(num3.value)
 
-    total.innerText = value1 + value2 + value3
+    total.innerText = value1 + value2 + value3;
+}
+
+
+//------------------------------------------------------------------------------------------
+
+/* 증가 감소 연산자 ++, -- */
+
+// 증가, 감소 할 수를 저장할 변수 선언
+let aaa = 0; //(주의) const 로 선언하면 값을 증가, 감소시킬 수 없다!
+
+// 문서 내에서 id가 "result2" 인 요소를 얻어와 result2 변수에 대입
+const result2 = document.getElementById("result2");
+
+/* 1 증가 함수 */
+function increase(){
+    ++aaa //또는 count++ -> count 값이 1 증가
+
+    // 증가한 count 값을 result2의 내용으로 대입
+    result2.innerText = aaa;
+}
+
+function decrease(){
+    --aaa //또는 count-- -> count 값이 1 감소
+
+    // 감소한 count 값을 result2의 내용으로 대입
+    result2.innerText = aaa;
+}
+
+/* 전위, 후위 연산 확인하기 */
+
+function check1() {
+
+    // 함수 안,밖은 구분되는 공간으로 생각하면 된다
+    // 동일한 이름의 변수를 함수 안팎으로 생성했다면 서로 다른 변수임(동명이인)
+    let count = 100;
+
+    // 컴퓨터한테 연산은 코드를 하나 하나 실행하는 것이다
+
+    // 전위연산 (++count, --count) 확인
+    // ->다른 연산보다 먼저 수행이 된다
+    // count 값이 먼저 증,감된 후 console에 출력이 된다!
+
+    console.log("++count", ++count); //101
+    console.log("++count", ++count); //102
+    console.log("++count", ++count); //103
+    console.log("-------------------------");
+    console.log("--count", --count); //102
+    console.log("--count", --count); //101
+    console.log("--count", --count); //100
+    
+    // 후위연산
+    // ->다른 연산이 모두 끝난 후 마지막에 수행된다
+
+    console.log("-------------------------");
+
+
+    count=50;
+
+    console.log("count++", count++); //50 출력 후 51로 증가
+    console.log("count++", count++); //51 출력 후 52로 증가
+    console.log("count++", count++); //52 출력 후 53로 증가
+    console.log("-------------------------");
+    console.log("count++", count--); //53 출력 후 52로 감소
+    console.log("count++", count--); //52 출력 후 51로 감소
+    console.log("count++", count--); //51 출력 후 50로 감소
+
+    console.log("-------------------------");
+
+    count=30;
+
+    console.log("count++", count++);
+    console.log("후위연산확인",count);
+    console.log("-------------------------");
+
+    let a= 10;
+    let b = 5;
+    let c = ++a*b--;
+
+    // 최종적으로 a,b,c에 저장된 값은?
+    // a == 11  b == 4  c == 55 이지 않을까
+
+    console.log(a,b,c);
+
+
+
+
 }

@@ -164,3 +164,5 @@ const sumFn = function(a,b){return a + b ;}
 
 console.log( typeof sumFn ) // function
 console.log(sumFn(3,5)); //함수 호출(기능 수행)
+
+

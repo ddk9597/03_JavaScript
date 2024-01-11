@@ -48,6 +48,29 @@
         <h3>결과 <span id="total"></span></h3>
     </div>
 
+    <br><hr>
+
+    <h3>증가/감소 연산자(++, --)</h3>
+    <pre>
+        - 1씩 값을 증가, 감소 시키는 연산자로서
+        - 합쳐서 증감 연산자 라고 부르기도 함수
+
+        * 전위 연산(제일 먼저 1 증감시키기)  -> ++변수명
+        * 후위 연산(제일 나중에 1증감시키기) -> 변수명++
+    </pre>
+
+    <div>
+        <button onclick="decrease()">1 감소</button> 
+
+        <span id="result2">0</span>
+
+        <button onclick="increase()">1증가</button>
+    </div>
     <script src="../js/03_연산자.js"></script>
+
+    <hr>
+
+    <h3>전위 후위 연산 확인하기</h3>                                                                                                                                                                                                                                                                                                                                                                                                                        
+    <button onclick="check1()">확인하기</button>
 </body>
 </html>
