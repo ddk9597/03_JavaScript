@@ -68,22 +68,125 @@ function check4(){
     const age = Number(inputAge.value);
     console.log('age : ', age)
 
-    // if( !(age >= 0 && age<=150)){
-    if(age < 0  || age > 150){
-        alert("잘못 입력하셨습니다.")
-    }
+    /* 빈 문자열("", '') : 내용이 없는 문자열 */
+
+    /* '문자열'.length : 문자열의 길이가 나온다. */
+
     
-    else if(age>=0 && age<=13){
-        alert("어린이");
+    // 입력된 나이의 길이가 0인 경우 == 입력 안한경우
+    if(inputAge.value.length == 0){
+    alert("미입력");
     }
 
-    else if( age<=19){
-        alert("청소년");
+    else{ //입력 한 경우 -> 이 때 어린이, 청소년, 성인 검사
+
+        /* 중첩 if 문 (안쓰는게 좋다.)*/ 
+
+        if(age < 0  || age > 150){
+            alert("잘못 입력하셨습니다.")
+        }
+        
+        else if(age >= 0 && age <= 13){
+            alert("어린이");
+        }
+
+        else if( age<=19){
+            alert("청소년");
+        }
+
+        else{
+            alert("성인");
+        }
+
     }
 
-    else{
-        alert("성인");
+}
+
+/* switch문을 이용한 계산기 */
+
+const number1 = document.getElementById("number1") ; //input
+const number2 = document.getElementById("number2") ; //input
+const calcResult = document.getElementById("calcResult"); //span
+
+function calc(op){
+    //매개변수(Parameter) op (이름 아무거나 해도 됨)
+    //- 함수 호출 시 전달되는 값을 저장하는 변수
+    // ex) calc('+') //함수 호출
+    // '+' 값이 op 변수에 저장되어짐
+
+    console.log("op :", op);
+
+    const v1 = Number(number1.value);
+    const v2 = Number(number2.value);
+
+    /* switch버전 */
+
+    //switch(식)
+    //"식"은 다양한 값이 나타날 수 있는 변수 또는 계산식
+
+
+    let result; // 결과 저장 변수 선언
+
+    switch(op){
+        // op 값에 따른 처리 case 작성
+
+        // break(멈추다) : switch 문을 멈춤
+        // ->case에 break를 작성하지 않으면 멈추지 않고 다음 case로 넘어가진다
+        case '+' : result = v1 + v2 ; 
+        case '-' : result = v1 - v2 ; break;
+        case '*' : result = v1 * v2 ; break;
+        case '/' : result = v1 / v2 ; break;
+        case '%' : result = v1 % v2 ; break;
+
+        // 맞는 case가 없을 경우 적용할 기본값(else)1
+        default : result = "잘못된 연산자"; break;
     }
 
+    calcResult.innerText = result;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // if문 버전
+
+    //op가 '+'인 경우
+
+    // if(op == '+'){
+    //     calcResult.innerText = v1 + v2;
+    // }
+    
+    // else if(op == '-'){
+    //     calcResult.innerText = v1 - v2;
+    // }
+    
+    // else if(op == '*'){
+    //     calcResult.innerText = v1 * v2;
+    // }
+    
+    // else if(op == '/'){
+    //     calcResult.innerText = v1 / v2;
+    // }
+    
+    // else if(op == '%'){
+    //     calcResult.innerText = v1 % v2;
+    // }
+    
+    // else{
+    //     calcResult.innerText = "잘못된 연산자" ;
+    // }
 
 }

@@ -103,62 +103,61 @@
     <button onclick="check4()">제출하기</button>
 
 
+    <hr><hr><hr>
+
+    <h1>switch, case, default</h1>
+
+    <pre>
+
+        switch문
+    - 식 하나의 결과로 많은 경우의 수를 처리할 때 사용하는 조건문
+      -> 식의 결과에 맞는 case 구문이 수행됨
 
 
+    <code>
+        switch문
+    - 식 하나의 결과로 많은 경우의 수를 처리할 때 사용하는 조건문
+      -> 식의 결과에 맞는 case 구문이 수행됨
 
+    <code>
+        switch(식){ // 식의 결과는 정수 또는 문자열
+        
+            case 결과1 : 결과1의 수행 코드; break;
+            case 결과2 : 결과2의 수행 코드; break;
+            case 결과3 : 결과3의 수행 코드; break;
+            ...
+            
+            default : 모든 case가 만족하지 못할 때 수행할 코드
+        }
+    </code>
 
+    </pre>
 
+    <h3>switch 문을 이용한 계산기</h3>
 
+    <div>
+        <div>
+            첫 번째 값 : <input type="number" id="number1">
+        </div><br>
+        
+        <div>
+            두 번째 값 : <input type="number" id="number2">
+        </div><br>
+        
+        <div>
+            <!-- 전달 인자(Arguments) : 함수 호출 시 괄호 안에 적는 값 -->
+            <!-- ()내부에 작성된 값이 함수 매개 변수로 전달된다 -->
+            <button onclick="calc('+')">+</button>
+            <button onclick="calc('-')">-</button>
+            <button onclick="calc('*')">*</button>
+            <button onclick="calc('/')">/</button>
+            <button onclick="calc('%')">%</button>
+            <button onclick="calc('@')">@</button>
+        </div>
 
+        <h1>결과 : <span id="calcResult"></span> </h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
 
 
