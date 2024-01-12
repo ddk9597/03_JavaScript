@@ -100,5 +100,48 @@ function checkFn5(){
     console.log(`!false = ${false}`) ;
 
     const bool6 = false;
-    console.log (  !(bool6 != true)   );  //
+    console.log (  !(bool6 != true)   ); 
+
 }
+
+/* 삼항연산자 (로그인 하기) */
+const inputId = document.getElementById("inputId");
+const inputPw = document.getElementById("inputPw");
+
+function login(){
+
+    // ID, PW input에 작성된 값 얻어오기
+    const id = inputId.value;
+    const pw = inputPw.value;
+  
+    const success = "로그인 성공!";
+    const fail = "아이디 또는 비밀번호가 일치하지 않습니다.";
+  
+    // alert에 출력될 내용을 저장할 변수 선언
+    const message 
+      = (id == 'member01') && (pw == 'pass01!') ? success : fail ;
+  
+    alert(message);
+  }
+
+  /* 삼항연산자 (로그인 하기) */
+const inputId1 = document.getElementById("inputId1");
+const inputPw1 = document.getElementById("inputPw1");
+
+function login(){
+
+    // ID, PW input에 작성된 값 얻어오기
+    const id = inputId1.value;
+    const pw = inputPw1.value;
+  
+    const success1 = "로그인 성공!";
+    const fail1 = "아이디 또는 비밀번호가 일치하지 않습니다.";
+    const fail2 = "비밀번호가 일치하지 않습니다.";
+  
+    // alert에 출력될 내용을 저장할 변수 선언
+    const message 
+      = (id == 'member01') && (pw == 'pass01!') ? success1 : fail1 ;
+  
+    alert(message);
+}
+  
