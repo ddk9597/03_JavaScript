@@ -115,7 +115,7 @@ function calc(op){
     // '+' 값이 op 변수에 저장되어짐
 
     console.log("op :", op);
-
+    
     const v1 = Number(number1.value);
     const v2 = Number(number2.value);
 
@@ -132,7 +132,7 @@ function calc(op){
 
         // break(멈추다) : switch 문을 멈춤
         // ->case에 break를 작성하지 않으면 멈추지 않고 다음 case로 넘어가진다
-        case '+' : result = v1 + v2 ; 
+        case '+' : result = v1 + v2 ; break;
         case '-' : result = v1 - v2 ; break;
         case '*' : result = v1 * v2 ; break;
         case '/' : result = v1 / v2 ; break;

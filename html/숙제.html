@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숙제</title>
+
+    <link rel="stylesheet" href="../css/숙제.css">
+</head>
+<body>
+    <h2>입출금 통장</h2>
+
+    <div id="balance">잔액: <span id="currentBalance">10000</span> 원</div>
+
+    <label for="transactionAmount">거래 금액:</label>
+    <input type="number" id="transactionAmount" min="0">
+
+    <button onclick="deposit()">입금</button>
+    <button onclick="withdrawl()">출금</button>
+
+    <div id="transactionHistory">
+    <h3>거래 내역</h3>
+    <ul id="historyList"></ul>
+</div>
+
+
+    <script src="../js/숙제.js"></script>
+</body>
+</html>

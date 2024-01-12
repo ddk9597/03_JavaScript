@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입출금 통장</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #balance {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #transactionAmount {
+            width: 150px;
+            margin-right: 10px;
+        }
+        #transactionHistory {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>입출금 통장</h2>
+
+<div id="balance">잔액: <span id="currentBalance">10000</span> 원</div>
+
+<label for="transactionAmount">거래 금액:</label>
+<input type="number" id="transactionAmount" min="0">
+
+<button onclick="deposit()">입금</button>
+<button onclick="withdraw()">출금</button>
+
+<div id="transactionHistory">
+    <h3>거래 내역</h3>
+    <ul id="historyList"></ul>
+</div>
+
+<script>
+    var currentBalance = 10000;
+    var transactionHistory = [];
+    var password = '1234';
+
+    function updateBalance() {
+        document.getElementById("currentBalance").innerText = currentBalance + " 원";
+    }
+
+    function updateTransactionHistory() {
+        var historyList = document.getElementById("historyList");
+        historyList.innerHTML = "";
+        for (var i = 0; i < transactionHistory.length; i++) {
+            var listItem = document.createElement("li");
+            listItem.textContent = transactionHistory[i];
+            historyList.appendChild(listItem);
+        }
+    }
+
+    function deposit() {
+        var amount = parseInt(document.getElementById("transactionAmount").value);
+        if (!isNaN(amount) && amount > 0) {
+            currentBalance += amount;
+            transactionHistory.push("입금: +" + amount + " 원");
+            updateBalance();
+            updateTransactionHistory();
+            alert('입금되었습니다.');
+        } else {
+            alert('올바른 금액을 입력하세요.');
+        }
+    }
+
+    function withdraw() {
+        var amount = parseInt(document.getElementById("transactionAmount").value);
+
+        // 비밀번호 확인 로직
+        var enteredPassword = prompt('비밀번호를 입력하세요');
+
+        if (enteredPassword === null) {
+            // 취소 버튼 클릭
+            alert('취소');
+        } else if (enteredPassword === password) {
+            // 비밀번호 일치
+            if (!isNaN(amount) && amount > 0 && amount <= currentBalance) {
+                currentBalance -= amount;
+                transactionHistory.push("출금: -" + amount + " 원");
+                updateBalance();
+                updateTransactionHistory();
+                alert('출금되었습니다.');
+            } else {
+                alert('출금할 수 없습니다. 잔액이 부족하거나 올바른 금액을 입력하세요.');
+            }
+        } else {
+            // 비밀번호 불일치
+            alert('비밀번호가 일치하지 않습니다.');
+        }
+    }
+</script>
+
+</body>
+</html>
