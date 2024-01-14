@@ -32,7 +32,7 @@ console.log(number2);
 console.log(number1 + number2);
 
 /* 변수에 대입한 값 변경하기 */
-number1 = 300; //number1dp 300 대입(기존 값 10 덮어쓰기함)
+number1 = 300; //number1에 300 대입(기존 값 10 덮어쓰기함)
 
 number2 = 400;
 
@@ -145,13 +145,13 @@ console.log("user : ", user, typeof user)
 
 /* 객체에 존재하는 값 하나씩 얻어오기 */
 
-// 방법 1 : 변수명['key']
+// 방법 1 : 이름['key']
 console.log("user['id'] : ", user['id'], typeof user['id']);
 console.log("user['pw'] : ", user['pw'], typeof user['pw']);
 console.log("user['userName'] : ", user['userName'], typeof user['userName']);
 
 
-//방법 2 : 변수명.key
+//방법 2 : 이름.key
 console.log(user.id, user.pw, user.userName)
 
 /* 함수( function) */
@@ -164,5 +164,4 @@ const sumFn = function(a,b){return a + b ;}
 
 console.log( typeof sumFn ) // function
 console.log(sumFn(3,5)); //함수 호출(기능 수행)
-
 
