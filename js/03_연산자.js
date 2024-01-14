@@ -75,6 +75,8 @@ function modFn(){
 
 }
 
+
+// 입력받은 수 3개 출력하기. 
 const num1 = document.getElementById("num1")
 const num2 = document.getElementById("num2")
 const num3 = document.getElementById("num3")

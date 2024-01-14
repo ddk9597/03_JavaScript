@@ -16,7 +16,7 @@ function check1(){
     }
 }
 
-/* inf- else  홀짝 판별하기 */
+/* if- else  홀짝 판별하기 */
 function check2(){
     //난수 발생 : Math.random()
     //난수 범위 : 0<= Math.random() <1
