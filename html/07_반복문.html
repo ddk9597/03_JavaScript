@@ -30,7 +30,7 @@
         조건식이 false가 되면 바로 종료
         <code>
             for(초기식 ; 조건식 ; 증감식){
-                조건식이 treu인 경우 반복 수행 할 코드
+                조건식이 true인 경우 반복 수행 할 코드
             }
 
             초기식 : for 문을 제어하는 용도의 변수 선언 
@@ -87,6 +87,115 @@
         <ul id="result2"></ul>
         
     </div>
+
+    <hr>
+
+    <!-- 구구단 2단 출력하기  -->
+    <button onclick="check07()"> 콘솔에 구구단 2단 출력하기 </button>
+
+    <!-- 구구단 입력한 단 출력하기 -->
+    <h3>입력한 구구단 출력하기</h3>
+
+    <div>
+        단 : <input type="number" id="input3"> <br><br>
+        <button onclick="excuteFn3()"> 입력한 구구단 출력하기 </button> <br><br>
+        <ul id="result3"></ul>
+    </div>
+
+    <!-- 구구단 입력한 단(2~9) 출력하기 -->
+    <h3>입력한 2~ 9 사이 구구단 출력하기</h3>
+
+    <div>
+        단 : <input type="number" id="input4"> <br><br>
+        <button onclick="excuteFn4()"> 입력한 구구단 출력하기 </button> <br><br>
+        <ul id="result4"></ul>
+    </div>
+
+    
+    <hr>
+
+    <h3>특정 배수 마다 지정된 모양으로 출력하기(삼육구)</h3>
+    <!-- 
+        배수 지정 : 5
+        출력 모양 : @
+        1 2 3 4 @ 6 7 8 9 @
+        ... 
+        44 @ 46 47 48 49 @
+
+        한 줄에 열개씩
+        
+    -->
+
+    <div>
+        배수 지정 : <input type="number" id="input5">
+        출력 모양 : <input type="text" id="output5">
+
+        <button onclick="excuteFn5()">출력하기</button>
+
+        <div id="result5"></div>
+    </div>
+
+    <hr><hr>
+
+    <h1>중첩 반복문(2중 for문)</h1>
+
+    <pre>
+        -반복문 내부에 또 반복문이 작성된 형태 
+
+        [작성법]
+        for(초기식1 ; 조건식1 ; 증감식1 ;){
+
+            for(초기식2; 조건식2; 증감식2; ){
+
+            }
+        }
+    </pre>
+
+    <h3>다음 모양 출력하기 1</h3>
+    <pre>
+        12345
+        12345
+        12345
+        12345
+    </pre>
+
+    <button onclick="check8()">확인하기</button>
+    
+    <hr>
+
+    <h3>다음모양 출력하기 2</h3>
+    <pre>
+        1
+        12
+        123
+        1234
+        12345
+    </pre>
+    <button onclick="check9()">확인하기</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -85,11 +85,13 @@ function excuteFn2(){
     const end = Number(document.getElementById("inputNumber2-2").value) ;
     const val = Number(document.getElementById("inputNumber2-3").value) ;
 
-    const ul = document.getElementById("result2"); //결과를 출력할 ul 요소 
+    const ul = document.getElementById("result2") ; //결과를 출력할 ul 요소 
+
+    ul.innerHTML = "" ; //이전 ul에 작성된 내용을 지우기
 
     // start부터 end까지 val씩 증가한다.
     for(let num = start ; num <= end ; num += val){
-        ul.innerHTML += `<li>${num}</li>`;
+        ul.innerHTML += `<li>${num}</li>`; // += : 누적시키기, = : 덮어씌우기
     }
 }
 
@@ -97,3 +99,129 @@ function excuteFn2(){
 //      innerText 특 ) html 태그를 해석하지 않고 그대로 보여줌
 
 // 요소.innerHTML  = "<h2>문자열</h2>"; -> HTML태그를 해석해서 화면에 출력
+
+
+
+/* 구구단 2단 출력하기 */
+function check07(){
+    for(let num = 1 ; num <= 9 ; num ++){
+        console.log(`2 x ${num} = ${2*num}`);
+    }
+}
+
+/* 구구단 입력한 단 출력하기 */
+function excuteFn3(){
+
+    const tier = Number(document.getElementById("input3").value); //입력한 단의 값을 숫자로 변환 후 가져옴
+    const result = document.getElementById("result3"); // ul태그 내에 입력 될 결과 값
+    result.innerHTML = "" ; //이전 기록 지움
+
+    for(let num = 1 ; num <= 9 ; num ++){
+        result.innerHTML += (`<li>${tier} x ${num} = ${tier*num}</li>`) ;
+    }
+}
+
+/* 구구단 입력한 단 출력하기 */
+function excuteFn4(){
+
+    const tier = Number(document.getElementById("input4").value); //입력한 단의 값을 숫자로 변환 후 가져옴
+    const result = document.getElementById("result4"); // ul태그 내에 입력 될 결과 값
+    result.innerHTML = "" ; //이전 기록 지움
+
+    // 입력 받은 단이 2 ~ 9 사이가 아닐 경우 알림창 띄우기
+
+    if(tier < 2 || tier > 9){
+        alert("2 ~ 9 사이만 입력해주세요.");
+
+        return; // 함수를 종료하고 호출한 곳으로 돌아감
+                // 지금 단계에선 함수 종료 정도로만 이해
+                // 요즘 트렌드라고 합니다
+    }
+
+    for(let num = 1 ; num <= 9 ; num ++){
+        result.innerHTML += (`<li>${tier} x ${num} = ${tier*num}</li>`) ;
+    }
+}
+
+function excuteFn5(){
+    // 배수
+    const input = Number(document.getElementById("input5").value);
+
+    // 모양
+    const output = document.getElementById("output5").value ; 
+
+    // 출력할 div 
+    const result = document.getElementById("result5");
+
+    //출력할 문자열을 저장할 변수
+    let str = "";
+
+    for(let x = 1 ; x <= 50 ; x++){
+        if (x % input == 0){//x가 input의 배수인 경우
+
+            //str에 x 대신 output을 대입한다.
+            str += output + " ";
+
+        } else{
+            str += x + " ";
+        }
+
+        //10의 배수마다 str에 <br> 태그 추가하기
+        if(x % 10 == 0){
+            str += "<br>"
+        }
+
+    }
+
+    result.innerHTML = str;
+}
+
+
+
+/* 
+다음 모양 출력하기 1
+12345
+12345
+12345
+12345
+*/
+
+function check8(){
+
+    // 4번 반복하는 for문
+    for(let y =1 ; y <= 4 ; y ++){
+
+        // 12345 출력하는 for문
+        let str = "" ;
+        
+        for(let x = 1 ; x <= 5 ; x++){
+            str += x ;
+        }
+        console.log(str);
+        console.log(" ");
+
+    }
+
+    
+}
+
+/* 
+    다음모양 출력하기 2
+    1
+    12
+    123
+    1234
+    12345 
+*/
+
+function check9(){
+
+    for(let y = 1 ; y <= 5 ; y ++){
+
+        let str = "";
+        for(let x = 1 ; x <= y ; x ++){
+            str += x;
+        }
+        console.log(str);
+    }
+}
