@@ -199,3 +199,13 @@ function check11(){
     }
 }
 
+// 모양 출력하기 4
+function check12(){
+
+    for(let row = 1 ; row <=4 ; row ++ ){
+        let str = "" ; 
+        for (let col = 1 ; col <= row ; col ++){
+            
+        }
+    }
+}
