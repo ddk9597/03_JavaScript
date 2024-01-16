@@ -142,3 +142,60 @@ function excuteFn5(){
 12345
 12345
  */
+
+function check8(){
+    for(let y = 1 ; y <= 4 ; y ++ ){ // 4번 반복. y= 1~4 
+        
+        let str = "" ; // 중복 표시 막기 위한 선언
+
+        for (let x = 1 ; x <= 5 ; x ++){
+            str += x ;
+        }
+
+        console.log(str);
+        console.log("") ;
+    }
+    
+}
+
+// 다음 모양 출력하기 2
+/* 
+1
+12
+123
+1234
+12345 */
+// 5번 반복하되 순번과 같은 수 만큼의 수 출력
+function check9(){
+    for(let x = 1 ; x <= 6 ; x++ ){ //5번 반복
+        let str = "" ;
+        for(y = 1 ; y <= x ; y ++){
+            str += y ;
+            
+        }
+        console.log(str); 
+    }
+    
+}
+
+//감소하는 for 문
+function check10(){
+    for(let num = 5 ; num >= 1 ; num --){
+        console.log(num);
+    }
+}
+
+// 모양 출력하기 3 
+// 5부터 시작. 배열 수 : 5 - 배열의 순서
+function check11(){
+    for( num = 5 ; num >= 1 ; num --){
+        
+        let str = "" ;
+        
+        for( col = 1 ; col <= num ; num ++){
+            str += col ;
+        }
+        console.log(str);
+    }
+}
+
