@@ -74,6 +74,7 @@ function plus4(){
 
 
 /* 논리 연산자 확인하기 */
+// And (및)
 function checkFn5(){
 
     const bool1 = (104 >= 100)  &&  (104 % 2 == 0) ;
@@ -86,7 +87,7 @@ function checkFn5(){
     console.log(`3은 1부터 10 사이의 수가 맞는가? ${bool3}`)
 
 
-    //OR
+    //OR (또는)
 
     const bool4 = 4>10 || 4%2==0
     console.log(`4는 10을 초과하거나 짝수인가? ${bool4}`)
