@@ -14,7 +14,7 @@ function classTest(){
 
     //위랑 같은 것임
     for(let i = 0 ; i < divs.length ; i++){
-        divs[i].innerText = ` $[i]번째 div 입니다.`;
+        divs[i].innerText = `${i}번째 div 입니다.`;
     }
 
 
