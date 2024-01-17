@@ -103,12 +103,12 @@ function selectMenu(){
     const menuResult = document.getElementById("menuResult");
 
     // 점심 메뉴로 초기화된 배열 생성
-    const menus = ["콩밥", "다른 메뉴는 없어"]
+    const menus = ["콩밥", "다른 메뉴는 없어", "슬프지만 사실이야", "아 있네 다른 메뉴", "녹두콩밥", " ㅋㅋㅋㅋ"]
 
     // menus 배열 index 범위 내에서 난수 생성
     const randomNumber = Math.floor(Math.random() * menus.length);
 
-    // 난수번째 index 요소 값을 화면에 출력
+    // 생성 된 난수번째 index 요소 값을 화면에 출력
     menuResult.innerText = menus[randomNumber];
 
 }
@@ -119,7 +119,7 @@ function orderFn(){
     /* 목표 */
     // - 주문하기 버튼 클릭 -> prompt로 메뉴명, 수량 입력받기
     // - 메뉴 입력 취소 -> 주문 완료
-    // - 수량 입력 취소 -> 해당 메뉴 주문만 취소
+    // - 수량 입력 취소 -> 해당 메뉴 수량만 취소 후 다시 메뉴 입력
 
     const tobdy = document.getElementById("tbody");
     const total = document.getElementById("total");
@@ -156,28 +156,28 @@ function orderFn(){
 
         // 메뉴입력 끝, 수량 입력 시작
         // 프롬프트에 입력된 값을 수량으로 대입. 프롬프트에 메세지 출력.
-        let Quentity = prompt("수량을 입력하세요"); 
+        let quantity = prompt("수량을 입력하세요"); 
 
         // 수량 입력시 취소버튼 누른 경우 -> 다시 메뉴 입력
-        if(Quentity == null){
+        if(quantity == null){
             continue;
         }
 
         //수량을 입력하지 않거나 숫자가 아닌 문자를 입력한 경우 -> 처음부터 주문
         //isNaN(sth) = sth is Not a Number : 주어진 값이 숫자 : false 반환 / 숫자 아님 : true 반환
-        if(Quentity.length == 0 || isNaN(Number(Quentity))) {// Quentity 에 문자 입력 시 true 반환
+        if(quantity.length == 0 || isNaN(Number(quantity))) {// quantity 에 문자 입력 시 true 반환
             alert("올바른 수량을 입력하세요.")
             continue ;
         }
 
-        Quentity = Number(Quentity); // 숫자로 변환해서 저장
+        quantity = Number(quantity); // 숫자로 변환해서 저장
 
         // ------ 수량 입력 끝 , menus, prices, count 배열에 값 변경하기 ----------
 
         // idx : 선택한 메뉴가 존재하는 index 번호(148번 줄에서 선언)
-        // Quentity : 입력한 수량(자료형 : number)
+        // quantity : 입력한 수량(자료형 : number)
 
-        counts[idx] += Quentity ; // 
+        counts[idx] += quantity ; // 
     }//while 종료
 
     //화면 출력 및 금액 계산

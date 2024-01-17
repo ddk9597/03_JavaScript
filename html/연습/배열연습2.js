@@ -116,5 +116,87 @@ function check1(){
     /* 랜덤 뽑기 */
     function selectMenu(){
         // 결과가 출력 될 span
+        const lunch = document.getElementById("menuResult");
+
+        // 메뉴 생성
+        const menu = ["a", "b", "c", "d", "e", "f"]
+
+        // menu 배열 index범위 내에서 난수 생성
+        // 난수의 최대 범위는 메뉴의 index 값이므로 menu.length 곱한다
+        const pick = Math.floor(Math.random() * menu.length);
+
+        // 생성 된 난수번째 index 요소 값을 화면에 출력
+        lunch.innerText = menu[pick];
+    }
+
+/* 랜덤 뽑기 2*/
+function selectMenu2(){
+    //결과가 출력 될 span
+    result = document.getElementById("menuSelect");
+    // 메뉴 생성
+    const menu = ["사과", "바나나", "포도", "샤인머스켓", "망고"]
+
+    // 메뉴 인덱스 범위의 난수 생성
+    const pick = Math.floor(Math.random() * menu.length);
+
+    // 생성된 난수번째의 메뉴 인덱스 출력
+    result.innerText = menus[pick] ;
+}
+
+
+/* 랜덤 뽑기 3 */
+function selectMenu3(){
+    result3 = document.getElementById("menuSelect")
+    const menu = [1,2,3,4,5,6,7,8,9,10];
+    const randomNumber = Math.floor(Math.random()*menu.length);
+    result.innerText  = menu[randomNumber]  ;
+}
+
+/* 주문하기 프로그램 */
+function orderFn1(){
+    const tbody = document.getElementById("tbody)");
+    const total = document.getElementById("total");
+    const menu = [1,2,3,4,5];
+    const price = [100,200,300,400,500] ;
+    const count = new Array(menu.length);
+    count.fill(0)   ;
+
+    while(true){
+        const selectMenu = prompt("주문할 메뉴명 입력하세요");
+
+        if(selectMenu == null) break; // 취소를 누른 경우 (null)반복문을 종료한다
+
+        let idx = menu.indexOf(selectMenu);
+
+        if(idx == -1){
+            alert("목록에 있는 메뉴를 입력하세요");
+            continue ; // 다음 반복으로 넘어간다. 다시 반복 시작.
+        }
+        
+
+        // 수량 입력하기
+        // 프롬프트에 입력된 값을 수량으로 대입, 프롬프트에 메세지 출력
+
+        let count = prompt("수량을 입력하세요");
+        if(count == null) continue;
+    
+        if(count.length == 0 || isNaN(Number(prompt))){
+            alert("올바른 수량을 입력하세요")
+            continue ;
+        }
+
+        count = Number(count);
+        
+        count[idx] += count; 
+
+        
+    } // while 종료
+
+    // 화면 출력 및 금액 계산
+    // 이전 값 지우기
+    tbody.inneHTML = "" ;
+    let sum = 0 ;
+    for(let i = 0; )
+    
     }
 
