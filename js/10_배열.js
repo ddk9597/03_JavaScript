@@ -139,3 +139,191 @@ function selectMenu(){
     menuResult.innerText = menus[randomNumber];
 
 }
+
+/* 주문하기 프로그램 */
+
+function orderFn(){
+
+    /* 코딩 목표 */
+    // - 주문하기 버튼 클릭 시 prompt를 이용해서 
+    // - 메뉴명, 수량을 입력 받기
+    // - 메뉴 입력 시 취소를 클릭하면 "주문 완료"
+    // - 수량 입력 시 취소를 클릭하면 해당 메뉴 주문만 취소
+
+    const tbody = document.getElementById("tbody");
+    const total = document.getElementById("total")
+
+    // 메뉴 배열
+    const menus = ["라면", "김밥", "갈비만두", "우동"] ;
+
+    // 가격 배열
+    const prices = [4000, 3000, 4500, 6000];
+
+    // 주문한 메뉴 카운트 배열
+    // 메뉴 개수와 동일한 크기를 가진 배열
+    const counts = new Array(menus.length) ; //->모든 칸 비어있음
+
+    // 비어있는 칸을 0으로 채움
+    // for(let i = 0 ; i < counts.length ; i ++){
+    //     counts[i] = 0 ;
+    // }  - 이것과 동일한 JS 함수
+    counts.fill(0);
+
+    while(true){ // 무한 반복
+
+        const selectMenu = prompt("주문할 메뉴명 입력(완료시 취소)");
+        
+        if(selectMenu == null){ // 메뉴명 입력시 취소를 클릭한 경우
+            break;
+        }
+        
+        /* 입력한 메뉴가 menus 몇번째 index에 존재하는가? - for || JS함수 */
+        // -> 배열 검색
+
+        // 2) 배열명.indexOf("값")
+        // - JS 배열에서 제공하는 함수
+        // - 배열 내에 "값"이 존재하는 index 번호를 반환
+        // - 없다면 -1 반환
+
+        let idx = menus.indexOf(selectMenu);
+
+        // 잘못 주문한 경우 (idx == -1 ) 다시 반복 시작
+        if(idx == -1) {
+            alert("제대로 주문하세요");
+            continue;
+
+        }
+
+        // ----------------- 메뉴입력 끝, 수량 입력 시작 -----------------
+
+        let inputQ = prompt("수량을 입력하세요") ;
+
+        if(inputQ == null){ //수량 입력 취소 -> 다시 메뉴 입력
+            continue ; 
+        }
+
+        //수량을 입력하지 않거나 숫자를 입력하지 않은 경우
+        if(inputQ.length == 0 || isNaN(Number(inputQ))){ 
+            alert(" 똑바로 입력하라고. 처음부터 주문하세요");
+            continue ;
+        }
+
+        inputQ = Number(inputQ); // 숫자로 변환해서 저장
+
+        // -------- 수량 입력 끝 menus, prices, count 배열에 값 변경 시작 --------//
+
+        //
+
+        // idx : 선택한 메뉴가 존재하는 index 번호
+        // input : 입력한 수량(number 자료형)
+
+        counts[idx] += inputQ;
+
+    } // while 종료
+
+    // 중간확인
+    console.log(menus);
+    console.log(prices);
+    console.log(counts);
+    
+    //--------------------------------
+
+    // 화면 출력하기 + 합계(total계산) 시작
+
+    // tbody 이전 내용 지우기
+    tbody.innerHTML = "" ;
+    let sum = 0; // 합계 구하기 변수
+    for(let i = 0 ; i < counts.length ; i ++){
+        if(counts[i]==0){ // 메뉴를 주문하지 않은 경우
+            continue; 
+        }
+
+        // 한 줄 만들기
+        let tr = "<tr>"
+
+        tr += `<td>${menus[i]}</td>`;
+        tr += `<td>${prices[i]}</td>`;
+        tr += `<td>${counts[i]}</td>`;
+
+        tr +="</tr>"
+
+        // 화면에 tr 출력하기
+        tbody.innerHTML += tr;
+
+        // 합계 누적하기
+        sum += prices[i] * counts[i] ;
+    } //for문 끝
+
+    total.innerText = sum; // 합계 화면에 출력
+    
+}
+
+// ------------------------------------------------
+
+/* 2차원 배열 */
+function check5(){
+    const arr = [ [1,2,3,4],
+                  [5,6,7,8],
+                  [9,10,11,12] ] ;
+
+
+    // 1차원 배열 선언
+    const arr1 = [100,200,300,400] ;
+    const arr2 = [900,800,700,600] ;
+
+    // 2차원 배열 arr의 3,4번 인덱스 요소로 추가
+    arr[3] = arr1;
+    arr[4] = arr2;
+                 
+    console.log(arr)    ;
+
+    // 2차원 배열 요소 조회하는 방법 (선택해서 보기)
+
+    // 배열명[행][열]
+    console.log(arr[1][3]); // 8
+    console.log(arr[4][3]); // 600
+    console.log(arr[0][0]); // 1
+
+}
+
+
+/* 
+2부터 2씩 증가하는 수를 5행 5열 배열의 모든 요소에 차례대로 대입하고 출력하기
+*/
+function check6(){
+
+    let count = 2 ;
+
+    const arr = []; // 2차원 배열 (요소로 1차원 배열을 대입할 것)
+
+    for(let row = 0 ; row < 5 ; row ++){ // 행 제어 for 문
+
+        // 1차원 배열을 만들어 arr[i]에 대입
+        arr[row] = [];
+
+        for(let col = 0 ; col < 5 ; col ++){ // 열 제어 for 문
+            arr[row][col] = count ; // row 행 col 열에 count 대입
+            count += 2 ;            // count를 2 증가. 행이 넘어가도 count 값은 유지되어 계속 증가
+        }
+
+    }
+    console.log(arr);
+
+    // 계속해서  2차원 배열 arr 요소 거꾸로 출력하기
+
+    //row -> 4,3,2,1,0
+    for(let row = arr.length - 1 ; row >= 0 ; row--) {
+
+        let str = "";
+
+        //col -> 4,3,2,1,0
+        for(let col = arr[row].length -1 ; col >= 0 ; col --){
+            str += arr[row][col] + " "  ;
+        }
+
+        console.log(str);
+
+    }
+    
+
+}

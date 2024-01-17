@@ -73,7 +73,91 @@
         <button onclick="selectMenu()">뽑기</button>
     </div>
 
+    <hr>
 
+    <h3>고른 메뉴, 개수, 합계 금액 출력하기</h3>
+
+    <pre>
+        - table 활용하여 영수증 만들기
+        - 입력 : prompt
+
+    </pre>
+
+    <div>
+        <button onclick="orderFn()">주문하기</button>
+
+        <table border="1">
+            <caption>주문 내역</caption>
+            <thead>
+                <tr>
+                    <th>메뉴명</th>
+                    <th>가격</th>
+                    <th>수량</th>
+                </tr>
+            </thead>
+
+            <tbody id="tbody">
+                <tr>
+                    <td>김밥</td>
+                    <td>3000</td>
+                    <td>3</td>
+                </tr>
+                
+                <tr>
+                    <td>라면</td>
+                    <td>4000</td>
+                    <td>2</td>
+                </tr>
+                
+                <tr>
+                    <td>갈비만두</td>
+                    <td>4500</td>
+                    <td>2</td>
+                </tr>
+                
+                <tr>
+                    <td>우동</td>
+                    <td>6000</td>
+                    <td>2</td>
+                </tr>
+
+                <tfoot>
+                    <tr>
+                        <th>합계</th>
+                        <th colspan="2" id="total">38000</th>
+                    </tr>
+                </tfoot>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <hr>
+    <h1>2차원 배열</h1>
+
+    <pre>
+        1차원 배열
+        - 변수를 묶음으로 다루는 것
+          ex) const arr1 = [1,2,3,4];
+              const arr2 = [1,2,3,4];
+              const arr3 = [1,2,3,4];
+
+        2차원 배열
+        - 1차원 배열 변수를 묶음으로 다루는 것(파일 안에 파일 안에 파일 안..)
+
+          ex) const arr = [ [1,2,3,4], [1,2,3,4], [1,2,3,4] ];
+              또는
+              const arr = [];
+              arr[0] = arr1; // 1차원 배열을 arr 인덱스마다 하나씩 대임
+              arr[1] = arr2;
+              arr[2] = arr3;
+
+
+    </pre>
+
+    <button onclick="check5()">2차원 배열 확인</button>
+    
+    <button onclick="check6()">2차원 배열 확인 2</button>
 
 
 
