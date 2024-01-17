@@ -121,7 +121,7 @@ function excuteFn3(){
     }
 }
 
-/* 구구단 입력한 단 출력하기 */
+/* 구구단 입력한 단 출력하기2 */
 function excuteFn4(){
 
     const tier = Number(document.getElementById("input4").value); //입력한 단의 값을 숫자로 변환 후 가져옴
@@ -143,6 +143,8 @@ function excuteFn4(){
     }
 }
 
+
+// 삼육구
 function excuteFn5(){
     // 배수
     const input = Number(document.getElementById("input5").value);

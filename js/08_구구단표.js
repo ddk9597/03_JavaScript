@@ -28,4 +28,5 @@ function createTable() {
         tbodyContent += "</tr>";
     }
     tbody.innerHTML = tbodyContent;
+    
 }

@@ -209,3 +209,17 @@ function check12(){
         }
     }
 }
+
+// 카운트를 이용해 출력하기
+
+function check13(){
+    let count = 1 ;
+    for(let row = 1 ; row < 4 ; row ++ ){
+        let str = "" ;
+        for(let col = 1 ; col <= 4 ; col ++){
+            str += count + " ";
+            count ++ ;
+        }
+        console.log(str);
+    }
+}
