@@ -195,8 +195,15 @@ function orderFn1(){
     // 화면 출력 및 금액 계산
     // 이전 값 지우기
     tbody.inneHTML = "" ;
+
+    // 합계 저장 변수
     let sum = 0 ;
-    for(let i = 0; )
+    // 메뉴를 주문하지 않은 경우(글자 수가 0인 경우)
+    for(let i = 0; i < count.length ; i ++){
+        if(count[i] == 0) continue;
+    }
     
+    // 메뉴판 출력하기
+
     }
 
