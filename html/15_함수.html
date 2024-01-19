@@ -107,6 +107,62 @@
     </pre>
 
 
+    <hr><hr><hr>
+
+    <!-- 요즘 함수 작성 트렌드 -->
+    <h1 style = "color: red;">화살표 함수(Arrow Function)</h1>
+
+    <pre>
+        - 익명 함수의 한 종류
+        - 익명 함수를 간단히 표기하는 방법 (ES6)
+    
+        익명 함수 :  function(){}
+    
+
+        function(){}
+        이렇게 생긴 놈을
+
+        () => {}
+        이렇게 바꿈
+
+        1. 기본 형태 :  () => {}
+    
+    
+        <!-- 화살표함수의 규칙 -->
+        <!-- 매개변수 1개면 () 생략 가능!! -->
+        2. 매개변수 1개 :  (e) => {}  또는  
+                            e  => {}  // () 생략
+    
+        3. 매개변수 n개 :  (a,b,c) => {}   //  () 생략 불가
+    
+        4. 함수 정의 부분에 return 한 줄만 있을 경우 :
+    
+          1) 익명 함수 :               function(){ return 1 + 2; }
+    
+          2) 화살표 함수(기본) :       () => { return 1 + 2; }
+           
+          3) 화살표 함수(return 한줄) : () => 1 + 2
+                                        // {return} 생략
+    
+    
+        5. 함수 정의 부분에 return 한 줄만 있는데
+          return하는 값이 object(객체, 배열 등) 인 경우
+          {return} 생략 불가!!!
+    
+          () => { return {name:"홍길동", age:20}; }
+    
+      </pre>
+
+      <button class="arrow">0번 화살표 함수 기본형태</button> <br><br>
+
+      <button class="arrow">1번 매개변수가 1개인 경우(콘솔도 확인) </button> <br><br>
+
+      <button class="arrow">2번 return 한 줄만 작성된 경우</button> <br><br>
+
+      <button class="arrow">3번 return 한 줄인데 object 반환하는 경우</button> <br><br>
+      
+      <button class="arrow">4번 </button>
+    
     <script src="../js/15_함수.js"></script>
 </body>
 </html>

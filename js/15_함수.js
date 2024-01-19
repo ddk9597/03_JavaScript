@@ -121,7 +121,7 @@ btn2c.addEventListener("click", function(){
 function sumFn(arr){ //전달된 배열 요소의 합을 반환
 
     let sum = 0;
-    for(let i = 0 ; i<arr.length ; i ++){
+    for(let i = 0 ; i < arr.length ; i ++){
         sum += arr[i];
     }
 
@@ -151,8 +151,87 @@ btn3a.addEventListener("click", function(){
     numbers.push(30);
     numbers.push(50);
     numbers.push(4);
-
     numbers.push(pow(2,5)); // == numbers.push(32)
 
     console.log("합계 : ", sumFn(numbers));
 });
+
+/* --------------------------------- */
+
+/* 화살표 함수 */
+
+const arrowList = document.querySelectorAll(".arrow");
+
+/* 화살표 함수 기본형태 */
+arrowList[0].addEventListener("click", () => {
+    alert("화살표 함수 기본형태 연습")
+});
+
+/* 매개변수가 1개인 경우 () 생략 가능 */
+arrowList[1].addEventListener("click", e => {
+
+    // e : 이벤트 객체(모든 이벤트 관련 정보가 담겨잇는 객체)
+    // e.target : 이벤트가 발생한 요소 선택 가능
+
+    e.target.style.backgroundColor = "red" ;
+
+    print3( arr => {
+        let result = 1;
+        for(let i = 0 ; i < arr.length ; i ++){
+            result *= arr[i];
+        }
+        return result ;
+    });
+
+    console.log();
+
+
+});
+
+
+function print3(otherFn){
+
+    const numbers =[1,2,3,4];
+
+    console.log(otherFn(numbers));
+
+}
+
+
+/* return 한 줄만 작성된 경우 */
+arrowList[2].addEventListener("click", () => {
+
+    // twoNumberPlus( (a, b) => {return a + b;} );
+    twoNumberPlus( (a, b) => a + b ); // return 생략 가능
+
+});
+
+function twoNumberPlus( otherFn){
+    const input1 = Number(prompt("첫 번째 값"));
+
+    const input2 = Number(prompt("두 번째 값"));
+
+    alert(otherFn(input1, input2));
+}
+
+
+/* retrun 한줄인데 object 반환하는 경우 */
+
+arrowList[3].addEventListener("click", () => {
+
+    printObject( (name, age) => {
+        return {"name" : name, "age" : age }
+        // JS 객체 { K:V , K:V }
+    } );
+
+});
+
+function printObject(otherFn){
+
+    const obj = otherFn("홍길동", 20);
+
+    console.log("obj.name : ", obj.name)
+    console.log("obj.age : ", obj.age)
+
+
+}
