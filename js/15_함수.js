@@ -206,7 +206,7 @@ arrowList[2].addEventListener("click", () => {
 
 });
 
-function twoNumberPlus( otherFn){
+function twoNumberPlus( otherFn){ 
     const input1 = Number(prompt("첫 번째 값"));
 
     const input2 = Number(prompt("두 번째 값"));
@@ -232,6 +232,14 @@ function printObject(otherFn){
 
     console.log("obj.name : ", obj.name)
     console.log("obj.age : ", obj.age)
-
-
 }
+
+
+
+/* 즉시 실행함수 확인 */
+// 모양 : (()=>{코드 작성});
+
+(() => {
+    console.log("즉시실행함수입니다");
+    console.log("함수 모양이 이상하죠?");
+}) ();

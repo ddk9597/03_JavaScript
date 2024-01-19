@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>15_함수</title>
     <link rel="stylesheet" href="../css/15_함수.css">
 </head>
 <body>
@@ -161,8 +161,34 @@
 
       <button class="arrow">3번 return 한 줄인데 object 반환하는 경우</button> <br><br>
       
-      <button class="arrow">4번 </button>
     
+
+    <hr>
+
+    <h1>즉시 실행 함수</h1>
+
+    <pre>
+
+        (() => {}) ()
+        (함수명) (호출한다)
+        - 익명함수 바로 수행하는 함수 
+
+        *** 즉시실행함수 사용하는 이유 ***
+        1. 성능(속도)적 우위를 가지기 위해서
+            - 아주 약간 빠름
+
+        2. 변수명 중복 문제 해결을 위해 사용
+            - const num1 = 100;      // 전역변수
+              (() => { 
+                const num1 = 200 ;   // 지역변수{} 안에만 쓸 수 있음
+
+                console.log(num1);  -> 100이 아닌 200 됨
+            }) ()
+
+    </pre>
+
+    
+
     <script src="../js/15_함수.js"></script>
 </body>
 </html>
