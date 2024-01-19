@@ -42,4 +42,59 @@ console.log("test[9]의 다음 다음 형제 노드",test.childNodes[9].nextSibl
 // #test의 마지막 자식 노드의 이전 형제 노드 선택
 console.log("마지막 자식 노드의 이전 형제 노드 :",test.lastChild.previousSibling);
   
+/* ***** 노드 추가 ***** */
+
+// 1. 마지막 자식 노드로 추가(appendChild(node))
+// -> list[11] 마지막 자식으로 "ZZZ"라는 TextNode 추가
+list[11].appendChild(document.createTextNode("ZZZ"));
+
+// 2. 마지막 자식으로 추가(append( "내용" 또는 노드 또는 요소 * n ) )
+list[11].append("12345", "abcd", "가나다라");
+
+// 3. 첫번째 자식으로 추가 (prepend(내용 노드 요소))
+list[11].prepend("아", "집에","가고싶다");
+list[11].prepend("나는 어디로갈까"); // 첫 번째 자식(맨 앞)추가
+
+// 4. 이전/다음 형제로 추가(before/after("내용","노드","요소") );
+test.before("이전입니다");
+test.after("이후입니다");
+
+
+});
+
+
+/* -------------------------------------- */
+
+/* 요소(Element) 탐색 */
+
+const btn2 = document.querySelector("#btn2");
+
+btn2.addEventListener("click", () => {
+    // #test2 요소 얻어오기
+
+    const test2 = document.querySelector("#test2");
+
+    // #test2의 모든 자식 요소
+    console.log(test2.children);
+
+    // #test2의 부모요소
+    console.log(test2.parentElement);
+
+    // #test2의 첫 자식 요소
+    console.log(test2.firstElementChild);
+
+    // #test2의 마지막 자식 요소
+    console.log(test2.lasttElementChild);
+
+    // #test2의 이전 형제 요소
+    console.log(test2.previousElementSibling);
+
+    // #test2의 다음 형제 요소
+    console.log(test2.nextElementSibling);
+
+    // #test2의 0번 자식 요소
+    console.log("0번 자식 요소 : ",test2.children[0]);
+    
+    // #test2의 3번 자식 요소
+    console.log("3번 자식 요소 : ",test2.children[3]); 
 });
