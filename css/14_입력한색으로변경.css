@@ -1,27 +1,47 @@
-.container3{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
     width: 200px;
     border: 10x solid black;
 
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     padding: 5px;
 }
 
-.box3{
+.box{
     box-sizing: border-box;
     height: 200px;
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
+    transition-duration: 0.5s;
 
     /* css 변경 시간 */
 }
 
-.container3 *{
-    margin-bottom : 5px ;
-}
 
 button{
     width: 520px;
+}
+
+#btn{
+    border: 3px solid black;
+    font-weight: bold;
+    cursor: pointer;
 }
