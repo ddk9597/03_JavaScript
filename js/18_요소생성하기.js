@@ -52,6 +52,7 @@ innerHTMLBox.addEventListener("click", () => {
     container의 이전 내용에 "<div class='box'></div>" 을 누적 + HTML 해석
     */
 
+    
     container.innerHTML += "<div class='box'><input type='text'></div>"
     // += 복합 대입 연산자. 이전 값을 덮어씌워라.
 
