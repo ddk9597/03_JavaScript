@@ -24,3 +24,49 @@ function check4(){
     }
     
 }
+
+/* up down game */
+function startGame(){
+    // 난수 생성
+    const randomNumber = Math.floor(Math.random()*100) + 1;
+
+    // 정답 시도 횟수
+    let count = 0 ;
+
+    // prompt 에 작성될 문자열
+    let str = "1 ~ 100 사이 숫자를 입력해 주세요" ;
+
+    // while 무한반복
+    while(true){
+        // 값 입력은 prompt를 통해서 받기
+        // 확인 : 입력한 값, 취소 : null
+        let input = prompt(str);
+
+        if (input== null){
+            alert("게임 포기");
+            break ; // 현재 반복문 종료후 블록 밖으로
+        }
+
+        input = Number(input);
+        if(isNaN(input)){ //숫자가 아니면 true, 내부 코드 실행
+            alert("숫자만 입력하세요")
+            continue; //현재 반복 종료 후 다음 반복으로
+        }
+
+        // 숫자를 입력한 경우
+        // 시도 횟수 1회 추가
+        count ++ ;
+        // 정답을 맞춘 경우
+        if(input == randomNumber){
+            alert(`정답입니다( 정답 : ${input} / 시도횟수 : ${count})`);
+            break ; // 함수 종료 후 값을 반환
+        }
+
+        // 입력한 값이 정답보다 큰 경우
+        if(input > randomNumber){
+            alert(`Down / count : ${count}`);
+        }else{
+            alert(`up / count : ${count}`);
+        }
+    }
+}
