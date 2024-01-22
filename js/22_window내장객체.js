@@ -1,4 +1,4 @@
-/* setTimeou(함수, 지연시간)(ms 단위로) */
+/* setTimeout(함수, 지연시간)(ms 단위로) */
 
 const btn1 = document.querySelector("#btn1");
 btn1.addEventListener("click", () => {
@@ -59,3 +59,10 @@ start3.addEventListener("click", (e)=>{
     e.target.disabled = true; // 비활성화
 });
 
+// 멈춤 버튼 클릭 시
+stop3.addEventListener("click", () => {
+    // setInterval을 제거한다
+    window.clearInterval(curInterval);
+
+    start3.disabled = false; // start3을 비활성화 하지 않는다. 다시 눌러서 재시작할수 있게
+});

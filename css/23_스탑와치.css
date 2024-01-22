@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    margin: 50px auto;
+    width: 500px;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+
+body, body>main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 시계 부분 */
+#display{
+    margin: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+
+    padding: 10px 0;
+}
+
+/* 버튼 디자인 */
+button{
+    width: 100px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 기록 부분 */
+#recordContainer{
+    min-height: 100px;
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+
+    list-style: none;
+}
