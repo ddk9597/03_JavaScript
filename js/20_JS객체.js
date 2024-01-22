@@ -197,6 +197,37 @@ btn.addEventListener("click", () => {
         studentList[i].introduce();
     }
 
+});
 
+/* JSON확인 */
 
+const btn4 = document.querySelector("#btn4");
+btn4.addEventListener("click", ()=>{
+    
+    // JS 객체 생성
+    const obj = {"id" : "test01", "pw" : "1234", "number" : 9999};
+
+    // JS 객체를 JSON으로 변환
+    const str = JSON.stringify(obj);
+    console.log("JS객체를 JSON으로 변환");
+    console.log("obj :", obj);
+    console.log("str :", str);
+
+    console.log("--------------------------");
+
+    // JSON 문자열 -> JS객체로 변환
+    const str2 = '{"memberId":"user01","memberPw":"pass01","age":20}' ;
+    const obj2 = JSON.parse(str2);
+    console.log("JSON문자열을 JS객체로 변환");
+    console.log("str2 :",str2);
+    console.log("obj2 :",obj2);
+
+    // 서버 데이터 비동기 요청
+    // 서버 주소 데이터 받기
+    fetch('https://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMinuDustFrcstDspth?serviceKey=fC0CJR9Lmwp3VfoLcND3XVFDW7FKGuTMECDT6TZD3aE7q4XUVL6PYscpePWfKNMwh0p6ZUt%2FmOm5xGbckoRGCQ%3D%3D&returnType=JSON&numOfRows=100&pageNo=1&searchDate=2024-01-22&InformCode=PM10')
+    //JSON.parse 자동 실행
+    .then(response => response.json()) 
+    // 콘솔로 값 출력
+    .then( result => console.log(result))
+    .then( result => console.log(result.response.body.items[0].informGrade));
 });

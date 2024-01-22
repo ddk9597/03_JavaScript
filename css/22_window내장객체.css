@@ -1,0 +1,12 @@
+#box2{
+    width: 100px;
+    height: 100px;
+    border: 50px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(0, 77, 59);
+    background-color: rgb(150, 97, 211);
+}
