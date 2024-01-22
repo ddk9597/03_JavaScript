@@ -7,7 +7,7 @@ document.addEventListener("keydown", function(e){
     
     // e : 이벤트 객체(이벤트 관련 정보가 모두 담겨있음)
     // e.key : 입력된 키를 나타냄, 대소문자 구분되어짐
-    // 문자열.toLoswerCase() : 영어를 모두 소문자로 변경
+    // 문자열.toLowerCase() : 영어를 모두 소문자로 변경
     // 문자열.toUpperCase() : 영어를 모두 대문자로 변경
 
     // console.log(e.key);
