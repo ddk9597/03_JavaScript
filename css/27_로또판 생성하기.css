@@ -1,0 +1,62 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board{
+    display: flex;
+    align-items: flex-start;
+}
+
+.lottery{
+    border: 1px solid black;
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.numberPad{
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 12.5px 12.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button {
+    width: 300px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.checked{
+
+    background-color: yellowgreen;
+
+}
+
+.unchecked{
+    background-color: white;
+}
+
+ul{
+    padding : 100px;
+    border: 1px solid black;
+}
+
+ul > li {
+    list-style: none;
+
+}
