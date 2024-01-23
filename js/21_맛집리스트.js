@@ -1,18 +1,18 @@
 /* Restaurant 생성자 함수 */
 // 생성자함수는 대문자로 시작한다
 
-function Restaurant(resName, resAddress, resMenu){
+function Restaurant(resName, resAddress, resMenu){ //Restaurant 라는 함수 생성
     
     // 생성자함수 안에서 this == 만들어지는 객체 자체
 
     // 속성(변수, 필드)
     this.resName = resName;
-    this.resAddress = resAddress ;
+    this.resAddress = resAddress ; 
     
     // 메뉴("메뉴1, 메뉴2, 메뉴" -> 배열)
     /* 문자열.split("구분자") */
     // -> 문자열을 "구분자"로 쪼개서 배열로 반환
-    this.resMenu = resMenu.split(", ");
+    this.resMenu = resMenu.split(", "); // ,과 띄어쓰기를 기준으로 나눈다
 
     // 기능(메서드)
     this.information = function(){

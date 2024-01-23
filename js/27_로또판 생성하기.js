@@ -6,7 +6,7 @@ let checkCount = 0; // 체크카운트 저장용 변수
 
 /* 클릭시 반응 */
 
-// 문서 전체에서 클릭 반응 감지
+// 문서 전체에서 클릭 감지
 document.addEventListener("click", e => {
 
     // toggle checked on : checked class 추가 및 checkCount++
@@ -16,7 +16,7 @@ document.addEventListener("click", e => {
         // checked 클래스를 토글
         e.target.classList.toggle("checked");
 
-        // checked 클래스의 상태에 따라 checkCount 증가 또는 감소
+        // .checked를 가지고 있는 클래스 의 수를 checkCount에 산입
         checkCount = document.querySelectorAll(".numberPad.checked").length;
 
         // checkCount가 최대 6개까지만 유지되도록
@@ -37,20 +37,41 @@ document.addEventListener("click", e => {
     }
 });
 
+/* 
+    로또판 생성
+    체크된 넘버패드(수열) 기록(2차원수열)
+     - div에 li 형식으로
 
-// 버튼에 클릭 이벤트 감지
+*/
+
+// 로또판 생성 버튼에 클릭 이벤트 감지
 let hopeStorage = []; // 이전 결과 2차원 수열로 저장할 것
 btn.addEventListener("click", () => {
     // .checked 된 div의 innerText 수열로 저장 
-    const sequence = Array.from(document.querySelectorAll('.numberPad.checked'), div => div.innerText);
+    const voidHope = Array.from(document.querySelectorAll('.numberPad.checked'), div => div.innerText);
     
     // 수열을 hopeStorage에 추가
-    hopeStorage.push(sequence);
+    hopeStorage.push(voidHope);
 
     // .checked 클래스 제거
     document.querySelectorAll('.numberPad.checked').forEach(div => div.classList.remove('checked'));
 
-    console.log("Saved sequence:", sequence);
+    // hopeStorage의 수열 div.hope에 li 형식으로 출력
+    const hopeDiv = document.querySelector(".hope");
+    hopeDiv.innerHTML = ""; // 이전에 생성된 결과 삭제
+
+    hopeStorage.forEach((sequence, index) => {
+        const sequenceText = `${index + 1}회차 (${sequence.join(", ")})`;
+        const listItem = document.createElement("li");
+        listItem.textContent = sequenceText;
+        hopeDiv.appendChild(listItem);
+
+
+    console.log("Saved voidHope:", voidHope);
     console.log("Hope storage:", hopeStorage);
+    });
+
 });
+
+/*  */
 

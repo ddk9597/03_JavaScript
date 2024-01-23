@@ -2,7 +2,7 @@ const inputList = document.querySelectorAll(".color-input");
 
 document.querySelector("#changeButton").addEventListener("click", ()=>{
 
-    for(let i = 0 ; i <inputList.length ; i ++){
+    for(let i = 0 ; i <inputList.length ; i ++){ // .박스와 인풋의 인덱스 동위 설정 
         const box = inputList[i].previousElementSibling;
         box.style.backgroundColor = inputList[i].value;
     }
