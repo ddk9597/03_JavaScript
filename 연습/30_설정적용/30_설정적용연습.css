@@ -1,0 +1,24 @@
+/* 스타일링을 위한 간단한 CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.toolBox {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+.setTool {
+    margin-bottom: 15px;
+}
+
+#outputBox {
+    margin-top: 20px;
+    border: 5px solid gray;
+    display: flex;
+    padding: 10px;
+}

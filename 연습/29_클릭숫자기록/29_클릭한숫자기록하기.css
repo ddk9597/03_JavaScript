@@ -1,0 +1,36 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0;
+}
+
+.col{
+    display: flex;
+    flex-direction: row;
+}
+
+.numPad {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    
+    text-align: center;
+    line-height: 70px; /* 높이와 동일하게 설정하여 수직 가운데 정렬 */
+    
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.mouseDown{
+    background-color: rgb(140, 140, 210);
+}
+
+.mouseUp{
+    background-color: rgb(122, 85, 85);
+}
+
+.noBgc{
+    background-color: #fff;
+}

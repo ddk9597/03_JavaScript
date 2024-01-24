@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30_설정적용연습</title>
+    <link rel="stylesheet" href="./30_설정적용연습.css">
+</head>
+<body>
+
+    <div class="toolBox">
+
+        <div class="setTool">
+            <div>박스 너비 : <input type="text" id="setWidth"> px</div>
+            <div>박스 높이: <input type="text" id="setHeight"> px</div>
+            <div>글자 크기 : <input type="number" id="fontSize"> px</div>
+            <div>글자 굵기: 
+                <input type="radio" value="normal" name="fontWeight" id="fW_normal"> <label for="fW_normal">보통</label> 
+                <input type="radio" value="heavy" name="fontWeight" id="fW_heavy"> <label for="fW_heavy">굵게</label>
+            </div>
+
+
+            <div>글자색 : <input type="text" id="fontColor"></div>
+            <div>배경색: <input type="text" id="bgColor"></div>
+
+        <div>글자 가로정렬 : 
+            <input type="radio" name="rowSet" value="left" id="left"><label for="left">왼쪽</label>
+            <input type="radio" name="rowSet" value="center" id="rowMiddle"><label for="rowMiddle">가운데</label>
+            <input type="radio" name="rowSet" value="right" id="right"><label for="right">오른쪽</label>
+        </div>
+
+        <div>글자 세로정렬 : 
+            <input type="radio" name="colSet" value="flex-start" id="top"><label for="top">위</label>
+            <input type="radio" name="colSet" value="center" id="colMiddle"><label for="colMiddle">가운데</label>
+            <input type="radio" name="colSet" value="flex-end" id="bottom"><label for="bottom">아래</label>
+        </div>
+
+        <div>
+            출력 문자열 : <input type="text" id="outputString">
+        </div>
+        </div>
+
+        <div id="outputBox"><span id="boxText"></span></div>
+
+    </div>
+
+    <script src="./30_설정적용연습.js"></script>
+</body>
+</html>

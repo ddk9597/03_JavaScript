@@ -1,6 +1,6 @@
 const display         = document.querySelector("#display");
 
-const list = document.querySelectorAll("#display > span");
+const list = document.querySelectorAll("#display > span"); // 리스트형식으로 변환
 
 const startBtn        = document.querySelector("#startBtn");
 const recordBtn       = document.querySelector("#recordBtn");
@@ -24,7 +24,7 @@ startBtn.addEventListener("click", (e)=> {
         e.target.textContent = "START" ; // 버튼 내용  start로 변경
         window.clearInterval(curInterval); // curInterval 정지
         return;
-sa
+
 
     }
 
@@ -65,6 +65,7 @@ function output(){
     // second의 값과 화면에 출력된 초가 다를 경우에만 출력
     if(list[1].innerText != second) list[1].innerText = second;
 
+    // 너는 그냥 계속 바뀌어라
     list[2].innerText = msecond;
 
 
