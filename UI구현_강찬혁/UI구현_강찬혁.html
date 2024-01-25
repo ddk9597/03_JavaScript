@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI구현_강찬혁</title>
+    <link rel="stylesheet" href="./UI구현_강찬혁.css">
+</head>
+<body>
+    <div class="plate"> <!-- 전체 판 -->
+
+        <div class="screenLeft"> <!-- 화면 좌측 : 입력판, 숫자판, 추가Btn, 초기화Btn -->
+
+            <div class="display"> <!-- 입력 표시 판 -->
+                <input type="text" id="phoneNumberInput" >
+            </div>
+
+            <div class="numGroup"> <!-- 숫자 패드 모음 -->
+                <div class="numPad" onclick="accumulateNumber(1)">1</div>
+                <div class="numPad" onclick="accumulateNumber(2)">2</div>
+                <div class="numPad" onclick="accumulateNumber(3)">3</div>
+                <div class="numPad" onclick="accumulateNumber(4)">4</div>
+                <div class="numPad" onclick="accumulateNumber(5)">5</div>
+                <div class="numPad" onclick="accumulateNumber(6)">6</div>
+                <div class="numPad" onclick="accumulateNumber(7)">7</div>
+                <div class="numPad" onclick="accumulateNumber(8)">8</div>
+                <div class="numPad" onclick="accumulateNumber(9)">9</div>
+                <div class="numPad" onclick="accumulateNumber('#')">#</div>
+                <div class="numPad" onclick="accumulateNumber(0)">0</div>
+                <div class="numPad" onclick="accumulateNumber('*')">*</div>
+            </div>
+
+            <div class="buttonGroup"> <!-- 버튼 모음 -->
+                <button onclick="addPhoneNumber()" id="addBtn">추가</button>
+                <button onclick="resetInput()" id="resetBtn">초기화</button>
+            </div>
+
+        </div>
+
+
+        <div class="contactList">
+            <h6 class="listHead">전화번호 목록</h6>
+            <ul class="numberRecord" id="phoneNumberList"></ul>
+        </div>
+    </div>
+    <script src="./UI구현_강찬혁.js"></script>
+</body>
+</html>

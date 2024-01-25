@@ -1,0 +1,152 @@
+*{
+    user-select: none;
+
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 전체 판 설정 */
+.plate{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+}
+
+/* 화면 좌측 설정 */
+.screenLeft{
+    margin: 10px 0px ;
+    border-right: 1px solid gray;
+}
+
+
+/* 입력 표시 판 */
+.display{
+    border-bottom: 1px solid gray;
+    margin: 10px;
+}
+
+/* 번호 노출 판 및 내부 텍스트 스타일 설정*/
+#phoneNumberInput {
+    border: none;
+    font-weight: 900;
+    text-align: center;
+}
+
+
+/* 숫자패드 바탕 설정 */
+.numGroup{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 75%;
+}
+
+/* 숫자 패드 자체 설정 */
+.numPad{
+    width: 32.3333%;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    font-weight: bold;
+    font-size: larger;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+/* 숫자패드 호버 */
+.numPad:hover{
+    background-color: rgb(184, 182, 182);
+}
+
+/* 화면 모든 버튼의 호버 설정 */
+* button:hover{
+    cursor: pointer;
+}
+
+/* 하단 버튼 바탕 설정 */
+.buttonGroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+    padding-top: 10px;
+
+}
+
+/* 하단 버튼 자체 설정 */
+.buttonGroup > button {
+    width: 90%;
+}
+
+/* 추가 버튼 설정 */
+#addBtn{
+    background-color: none;
+    color: green;
+    border: 1px solid green;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+/* 추가버튼 호버 설정 */
+#addBtn:hover{
+    color: white;
+    background-color: green;
+
+}
+
+
+/* 초기화 버튼 설정 */
+#resetBtn{
+    background-color: none;
+    color: gray;
+    border: 1px solid gray;
+    border-radius: 3px;
+
+}
+
+/* -------------전화번호 목록 설정------------ */
+
+/* 목록 바탕 설정 */
+.contactList{ 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 전화번호 목록 */
+.listHead{
+    text-align: center;
+    margin: 5px;
+}
+
+/* padding 제거 : 생성된 li 앞부분 여백 제거 */
+.numberRecord{
+    padding: 0px 10px;
+    margin-top: 0px;
+}
+
+/* 생성된 목록 설정*/
+.phoneNumberItem{
+    list-style-type: none;
+    font-size: small;
+}
+
+/* 생성된 즐겨찾기, 삭제 버튼 스타일 설정 */
+.addedButton{
+    border: none;
+    background-color: white;
+}
