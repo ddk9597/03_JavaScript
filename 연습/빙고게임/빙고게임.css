@@ -1,0 +1,61 @@
+*{
+    user-select: none;
+
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.genBox{
+    cursor: pointer;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+.inputBundle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+}
+
+#rowCount,#winCount{
+    width: 100px;
+    height: 10px;
+}
+
+.box{
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+/* 체크된 박스에 calss checked 부여 */
+.checked{
+    background-color: skyblue;
+}
+
+/* 빙고 된 박스에 class bingo 부여 */
+.bingo{
+    background-color: rgb(220, 41, 1);
+}

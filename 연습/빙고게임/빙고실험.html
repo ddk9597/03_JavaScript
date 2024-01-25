@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .bingo-board {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            max-width: 500px;
+            margin: 20px;
+        }
+
+        .bingo-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ccc;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .checked {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            칸 수 입력 (최소 3): <input type="number" id="rowCount" min="3" placeholder="기본값 5">
+            승리 빙고 수 (최소 1): <input type="number" id="winCount" min="1" placeholder="기본값 3">
+            <button onclick="generateBingoBoard()">생성</button>
+        </div>
+
+        <div class="bingo-board" id="bingoBoard">
+
+        </div>
+
+        <div>
+            <p>가로 빙고 수: <span id="horizonCount">0</span></p>
+            <p>세로 빙고 수: <span id="verticalCount">0</span></p>
+            <p>대각선 빙고 수: <span id="diagonalCount">0</span></p>
+        </div>
+    </div>
+
+    <script>
+        let horizonCount = 0;
+        let verticalCount = 0;
+        let diagonalCount = 0;
+
+        function generateBingoBoard() {
+            const rowCount = parseInt(document.getElementById('rowCount').value) || 5;
+            const winCount = parseInt(document.getElementById('winCount').value) || 3;
+
+            const bingoBoard = document.getElementById('bingoBoard');
+            bingoBoard.innerHTML = '';
+            horizonCount = 0;
+            verticalCount = 0;
+            diagonalCount = 0;
+
+            for (let i = 0; i < rowCount; i++) {
+                for (let j = 0; j < rowCount; j++) {
+                    const box = document.createElement('div');
+                    box.classList.add('bingo-box');
+                    box.textContent = Math.floor(Math.random() * 99) + 1;
+                    box.addEventListener('click', () => checkBingo(i, j, rowCount, winCount));
+                    bingoBoard.appendChild(box);
+                }
+            }
+        }
+
+        function checkBingo(row, col, rowCount, winCount) {
+            const boxes = document.querySelectorAll('.bingo-box');
+            const index = row * rowCount + col;
+            const checkedClass = 'checked';
+
+            // Toggle checked class
+            boxes[index].classList.toggle(checkedClass);
+
+            // Check horizontal, vertical, and diagonal bingos
+            checkHorizontal(row, rowCount, winCount, checkedClass);
+            checkVertical(col, rowCount, winCount, checkedClass);
+            checkDiagonal(row, col, rowCount, winCount, checkedClass);
+        }
+
+        function checkHorizontal(row, rowCount, winCount, checkedClass) {
+            const boxes = document.querySelectorAll('.bingo-box');
+            const start = row * rowCount;
+            const end = start + rowCount;
+
+            let count = 0;
+            for (let i = start; i < end; i++) {
+                if (boxes[i].classList.contains(checkedClass)) {
+                    count++;
+                }
+            }
+
+            if (count >= winCount) {
+                horizonCount++;
+                document.getElementById('horizonCount').textContent = horizonCount;
+            }
+        }
+
+        function checkVertical(col, rowCount, winCount, checkedClass) {
+            const boxes = document.querySelectorAll('.bingo-box');
+
+            let count = 0;
+            for (let i = col; i < boxes.length; i += rowCount) {
+                if (boxes[i].classList.contains(checkedClass)) {
+                    count++;
+                }
+            }
+
+            if (count >= winCount) {
+                verticalCount++;
+                document.getElementById('verticalCount').textContent = verticalCount;
+            }
+        }
+
+        function checkDiagonal(row, col, rowCount, winCount, checkedClass) {
+            if (row === col) { // Check main diagonal
+                const boxes = document.querySelectorAll('.bingo-box');
+                let count = 0;
+                for (let i = 0; i < boxes.length; i += rowCount + 1) {
+                    if (boxes[i].classList.contains(checkedClass)) {
+                        count++;
+                    }
+                }
+
+                if (count >= winCount) {
+                    diagonalCount++;
+                    document.getElementById('diagonalCount').textContent = diagonalCount;
+                }
+            }
+
+            if (row + col === rowCount - 1) { // Check anti-diagonal
+                const boxes = document.querySelectorAll('.bingo-box');
+                let count = 0;
+                for (let i = rowCount - 1; i < boxes.length - 1; i += rowCount - 1) {
+                    if (boxes[i].classList.contains(checkedClass)) {
+                        count++;
+                    }
+                }
+
+                if (count >= winCount) {
+                    diagonalCount++;
+                    document.getElementById('diagonalCount').textContent = diagonalCount;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

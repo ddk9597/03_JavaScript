@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./빙고게임.css">
+    <title>Bingo Board</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inputBundle">
+            칸 수 입력 (최소 3): <input type="number" id="rowCount" placeholder="기본값 5" min="3" > 
+            승리 빙고 수 (최소 1): <input type="number" id="winCount" placeholder="기본값 3" min="1">
+            <button class="genBox" onclick="generateBingoBoard()">생성</button>
+        </div>
+
+        <div id="bingoBoardContainer">
+            <!-- 빙고 보드가 나타날 영역 -->
+        </div>
+
+        <div id="currentBingoCount">
+            <!-- 현재 빙고 수가 나타날 영역 -->
+        </div>
+    </div>
+    <script src="./빙고게임.js"></script>
+</body>
+</html>
