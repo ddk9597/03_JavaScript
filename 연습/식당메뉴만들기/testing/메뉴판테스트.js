@@ -142,6 +142,7 @@ startMenuChange.addEventListener("click", () => {
     });
     // 자신에게 "disNone" 클래스 추가
     startMenuChange.classList.add("disNone");
+    
 
     // managerLogin 띄우기
     // const managerLogin = document.getElementById("#managerLogin");
@@ -180,7 +181,6 @@ startMenuChange.addEventListener("click", () => {
 /* 수정 버튼 기능 추가 */
 // 수정 버튼 클릭 시
 // 화면 가운데  비밀번호 입력 칸 띄우기
-// 
     // width 300 height 300px
 // 비밀번호 : 1q2w3e4r!
 // 비밀번호 
