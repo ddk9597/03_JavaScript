@@ -99,5 +99,58 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+/* 추가 기능 */
+/* 관리자 로그인 패널 */
 
+#managerLogin{
 
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* 화면 정가운데 고정 */
+    position: fixed;
+    right: 50%;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    
+}
+
+#managerLogin *{
+    padding: 10px;
+}
+
+#mangerPannel_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#mangerPannel_1 :first-child{
+    color: blueviolet;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#managerPw{
+    width: 200px;
+}
+
+#managerBtnbox button{
+    background-color: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 20px;
+
+    cursor: pointer;
+}  

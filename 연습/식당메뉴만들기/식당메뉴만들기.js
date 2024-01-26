@@ -63,7 +63,7 @@ addMenu.addEventListener("click", () => {
 
     // 가격 입력란 생성
     const priceInput = document.createElement("input");
-    priceInput.type = "text";
+    priceInput.type = "number";
     priceInput.classList.add("menuSquad");
     priceInput.placeholder = "가격을 입력하세요";
 
@@ -84,8 +84,6 @@ addMenu.addEventListener("click", () => {
     document.querySelector(".menuList").appendChild(addedMenuGroup);
 });
 
-
-
 /// 삭제 버튼
 deleteMenu.addEventListener("click", () => {
     // checked된 체크박스를 찾아서 삭제
@@ -97,7 +95,6 @@ deleteMenu.addEventListener("click", () => {
         addedMenuGroup.remove();
     });
 });
-
 
 /* 종료 버튼, 수정버튼*/
 // 공통 변수 선언
@@ -165,3 +162,25 @@ startMenuChange.addEventListener("click", () => {
         });
     });
 });
+
+/* ------------------- 기본 기능 끝 ------------------- */
+
+/* --------------------- 추가 기능 -------------------- */
+
+
+
+/* 키오스크처럼 만들어보자 */
+
+// menuList에 내부 값이 하나도 없을 경우
+// 텍스트 출력 -> 
+
+/* 관리자 모드 버튼 상단에 추가 */
+// 관리자모드 버튼 클릭 시
+// 비밀번호 입력 칸 만들기
+// 비밀번호 : 1q2w3e4r!
+// 비밀번호 일치 ->
+// 비밀번호 불일치 -> tryPwCount 누적
+// tryPwCount 5회 초과시 -> alert("페이지를 새로고침하세요") 무한while문 작동.
+
+/* 출력된 수의 끝자리부터 세번째 자리마다 , 추가 */
+// ex) 10000 -> 10,000
