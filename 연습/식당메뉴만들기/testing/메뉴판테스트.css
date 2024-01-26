@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'EASTARJET-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/EASTARJET-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+*{
+    font-family: EASTARJET-Medium;
+    user-select: none;
+}
+
+#clickMutual{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+hr{
+    border: 2px solid black;
+}
+
+#inputMutual{
+    width: 500px;
+    border: none;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#displayMutual{
+    color: red;
+    width: 500px;
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+
+/* menuList 설정 */
+.menuList{
+    min-height: 500px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.menuList .addedMenuGroup{
+    width: 33.333%;
+    height: 100px;
+}
+
+.addedMenuGroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addedMenuGroup input{
+    height: 50%;
+}
+
+/* 체크박스 스타일 */
+input[type="checkbox"] {
+    /* 원하는 크기로 조절 */
+    width: 30px;
+    height: 30px;
+}
+
+/* 보여질 메뉴 설정 */
+.menuSquadConent{
+    color: red;
+}
+
+.addedMenuGroup :nth-child(2){
+    width: 200px;
+}
+
+/* 숨김클래스 속성 넣기 */
+.disNone{
+    display: none;
+}
+
+.teamBtn{
+    padding: 10px 20px;
+
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.teamBtn button{
+    width: 100px;
+    height: 30px;
+    color: black;
+    font-size: 20px;
+    
+    border: 2px solid black;
+    border-radius: 7.5px;
+    margin: 10px;
+
+    cursor: pointer;
+}
+
+
+

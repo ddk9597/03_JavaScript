@@ -7,31 +7,23 @@ const clickMutual = document.querySelector("#clickMutual");
 /* clickMutual 클릭 시 inputMutual, displayMutual의 클래스 변경 */
 // 클릭 이벤트 감지 및 기능 설정
 clickMutual.addEventListener("click", ()=> {
-
     // 1. inputMutual에 "disNone" 클래스 제거
     inputMutual.classList.remove("disNone");
-
     // 2. displayMutual에서 "disNone" 클래스 추가
     displayMutual.classList.add("disNone");
-
-    
 });
 
 // inputMutual의 blur 이벤트가 발생할 때 classList 수정
 inputMutual.addEventListener("blur", () => {
     // 1. displayMutual의 내부 텍스트 설정 
     displayMutual.innerText = inputMutual.value;
-
     // 2. inputMutual에 "disNone" 클래스 추가
     inputMutual.classList.add("disNone");
-    
     // 3. displayMutual에서 "disNone" 클래스 제거
     displayMutual.classList.remove("disNone");
 });
 
-
 /* 버튼 설정 */ 
-
 // 버튼 그룹1
 const btnSquad1 = document.querySelectorAll(".btnSquad1");
 
@@ -40,9 +32,6 @@ const addMenu = document.querySelector("#addMenu");
 const deleteMenu = document.querySelector("#deleteMenu");
 const completeMenuChange = document.querySelector("#completeMenuChange");
 const startMenuChange = document.querySelector("#startMenuChange");
-
- 
-
 
 /* 클릭 이벤트 추가 */
 
@@ -58,6 +47,10 @@ addMenu.addEventListener("click", () => {
     checkbox.type = "checkbox";
     checkbox.classList.add("menuSquad");
 
+    // 가짜스팬 생성
+    const fakeSpan = document.createElement("span");
+    fakeSpan.classList.add("menuSquadContent", "disNone");
+
     // 메뉴명 입력란 생성
     const menuNameInput = document.createElement("input");
     menuNameInput.type = "text";
@@ -66,7 +59,7 @@ addMenu.addEventListener("click", () => {
 
     // 메뉴명 텍스트 생성
     const menuNameContent = document.createElement("span");
-    menuNameContent.classList.add("menuSquadConent", "disNone");
+    menuNameContent.classList.add("menuSquadContent", "disNone");
 
     // 가격 입력란 생성
     const priceInput = document.createElement("input");
@@ -76,11 +69,12 @@ addMenu.addEventListener("click", () => {
 
     // 가격 텍스트 생성
     const priceContent = document.createElement("span");
-    priceContent.classList.add("menuSquadConent", "disNone");
+    priceContent.classList.add("menuSquadContent", "disNone");
     priceContent.innerText = "원";
 
     // 생성된 요소들을 추가 요소에 추가
     addedMenuGroup.appendChild(checkbox);
+    addedMenuGroup.appendChild(fakeSpan);
     addedMenuGroup.appendChild(menuNameInput);
     addedMenuGroup.appendChild(menuNameContent);
     addedMenuGroup.appendChild(priceInput);
@@ -105,7 +99,8 @@ deleteMenu.addEventListener("click", () => {
 });
 
 
-/* 종료 버튼 */
+/* 종료 버튼, 수정버튼*/
+// 공통 변수 선언
 
 completeMenuChange.addEventListener("click", () => {
     // 버튼 그룹1의 각 요소에 "disNone" 클래스 추가
@@ -116,33 +111,30 @@ completeMenuChange.addEventListener("click", () => {
     // 수정버튼에 disNone 클래스 제거
     startMenuChange.classList.remove("disNone");
 
-    // 변수 선언
-    const addedMenuGroup = document.querySelector(".addedMenuGroup");
-    const inputGroup = addedMenuGroup.querySelectorAll("input");
-    const contentGroup = addedMenuGroup.querySelectorAll("span");
-    const menuSquad = document.querySelectorAll(".menuSquad");
-    const menuSquadConent의 = document.querySelectorAll(".menuSquadConent의");
+    // 변수 선언 피조물((생성되는 input, span 태그))
+    const addedMenuGroups = document.querySelectorAll(".addedMenuGroup"); // 피조물 묶음
 
-    // menuSquad input 태그에 클래스 disNone 추가
-    menuSquad.classList.add("disNone");
+    addedMenuGroups.forEach(addedMenuGroup => {
+        const inputGroup = addedMenuGroup.querySelectorAll("input"); // 피생성 인풋
+        const contentGroup = addedMenuGroup.querySelectorAll("span"); // 피생성 스팬
 
-    // menuSquadConent의 innerText addedMenuGroup의 value 로 대입
+        // 스팬텍스트=인풋value (인풋의 0번째는 체크박스이므로 제외)
+        for (let i = 1; i < inputGroup.length; i++) {
+            contentGroup[i-1].innerText = inputGroup[i].value;
+        }
+
+        // 생성된 input 태그에 클래스 disNone 추가
+        inputGroup.forEach(input => {
+            input.classList.add("disNone");
+        });
+
+        // menuSquadContent 에 클래스 disNone 제거
+        contentGroup.forEach(content => {
+            content.classList.remove("disNone");
+        });
+    });
+
     
-    
-    
-    for (let i = 0; i < inputGroup.length; i++) {
-        contentGroup[i].innerText = inputGroup[i+1].value;
-    }
-
-    // menuSquadConent 에 클래스 disNone 제거
-    const menuSquadConent = document.querySelector(".menuSquadConent");
-    menuSquadConent.classList.remove("disNone");
-
-
-
-    
-
-
 });
 
 // 수정 버튼
@@ -153,4 +145,23 @@ startMenuChange.addEventListener("click", () => {
     });
     // 자신에게 "disNone" 클래스 추가
     startMenuChange.classList.add("disNone");
+
+    // 수정 버튼을 클릭할 때 추가된 동작
+    // 생성된 input에 classList.remove("disNone") 추가
+    // 생성된 span에 classList.add("disNone") 추가
+    const addedMenuGroups = document.querySelectorAll(".addedMenuGroup"); // 피조물 묶음
+    addedMenuGroups.forEach(addedMenuGroup => {
+        const inputGroup = addedMenuGroup.querySelectorAll("input"); // 피생성 인풋
+        const contentGroup = addedMenuGroup.querySelectorAll("span"); // 피생성 스팬
+
+        // 생성된 input 태그에 클래스 disNone 제거
+        inputGroup.forEach(input => {
+            input.classList.remove("disNone");
+        });
+
+        // 생성된 span 태그에 클래스 disNone 추가
+        contentGroup.forEach(content => {
+            content.classList.add("disNone");
+        });
+    });
 });
