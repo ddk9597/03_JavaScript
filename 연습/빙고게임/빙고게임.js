@@ -43,48 +43,47 @@ function shuffleArray(array) {
             checkBingo(box, rowCount, winCount, currentBingoCount);
         }
 
-        function checkBingo(box, rowCount, winCount, currentBingoCount) {
-            const boxes = document.querySelectorAll('.box');
-            const index = Array.from(boxes).indexOf(box);
-            const row = Math.floor(index / rowCount);
-            const col = index % rowCount;
-        
-            // 가로, 세로, 대각선 체크
-            let horizontalCount = 0;
-            let verticalCount = 0;
-            let diagonalCount1 = 0;
-            let diagonalCount2 = 0;
-        
-            for (let i = 0; i < rowCount; i++) {
-                if (boxes[row * rowCount + i].classList.contains('checked')) {
-                    horizontalCount++;
-                }
-        
-                if (boxes[i * rowCount + col].classList.contains('checked')) {
-                    verticalCount++;
-                }
-        
-                if (boxes[i * rowCount + i].classList.contains('checked')) {
-                    diagonalCount1++;
-                }
-        
-                if (boxes[i * rowCount + (rowCount - 1 - i)].classList.contains('checked')) {
-                    diagonalCount2++;
-                }
-            }
-        
-            // 빙고가 완성되면 빙고 수 증가 및 표시 업데이트
-            if (horizontalCount === rowCount || verticalCount === rowCount || diagonalCount1 === rowCount || diagonalCount2 === rowCount) {
-                const currentBingo = parseInt(currentBingoCount.innerText.split(' ')[3]) + 1;
-                currentBingoCount.innerText = `현재 빙고 수: ${currentBingo}`;
-        
-                // 이겼을 때 처리
-                if (currentBingo === winCount) {
-                    alert("이겼습니다!");
-                    // 빙고 판 지우기
-                    const bingoBoardContainer = document.getElementById('bingoBoardContainer');
-                    bingoBoardContainer.innerHTML = '';
-                }
-            }
+function checkBingo(box, rowCount, winCount, currentBingoCount) {
+    const boxes = document.querySelectorAll('.box');
+    const index = Array.from(boxes).indexOf(box);
+    const row = Math.floor(index / rowCount);
+    const col = index % rowCount;
+
+    // 가로, 세로, 대각선 체크
+    let horizontalCount = 0;
+    let verticalCount = 0;
+    let diagonalCount1 = 0;
+    let diagonalCount2 = 0;
+
+    for (let i = 0; i < rowCount; i++) {
+        if (boxes[row * rowCount + i].classList.contains('checked')) {
+            horizontalCount++;
         }
-        
+
+        if (boxes[i * rowCount + col].classList.contains('checked')) {
+            verticalCount++;
+        }
+
+        if (boxes[i * rowCount + i].classList.contains('checked')) {
+            diagonalCount1++;
+        }
+
+        if (boxes[i * rowCount + (rowCount - 1 - i)].classList.contains('checked')) {
+            diagonalCount2++;
+        }
+    }
+
+    // 빙고가 완성되면 빙고 수 증가 및 표시 업데이트
+    if (horizontalCount === rowCount || verticalCount === rowCount || diagonalCount1 === rowCount || diagonalCount2 === rowCount) {
+        const currentBingo = parseInt(currentBingoCount.innerText.split(' ')[3]) + 1;
+        currentBingoCount.innerText = `현재 빙고 수: ${currentBingo}`;
+
+        // 이겼을 때 처리
+        if (currentBingo === winCount) {
+            alert("이겼습니다!");
+            // 빙고 판 지우기
+            const bingoBoardContainer = document.getElementById('bingoBoardContainer');
+            bingoBoardContainer.innerHTML = '';
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./식당메뉴만들기.css">
+</head>
+<body>
+    <div class="all"> <!-- 전체 -->
+        <div class="Mutual"> <!-- 식당명 기입란 -->
+            <label id="clickMutual" for="inputMutual">   식당 이름 : </label>
+            <input type="text" id="inputMutual" placeholder=" 식당명을 입력하세요">
+            <span id="displayMutual" class="disNone"></span>
+        </div>
+
+        <hr>
+
+        <div class="menuList"> <!-- 메뉴명 기입란 ( 메뉴명 + 가격 같이 표기) -->
+            <!-- <div class="addedMenuGroup" id="added" >
+                <input type="checkbox" class="menuSquad">
+                <input type="text" class="menuSquad" placeholder="메뉴명을 입력하세요">
+                <span class="menuSquadConent disNone"></span>
+                <input type="text" class="menuSquad" placeholder="가격을 입력하세요">
+                <span class="menuSquadConent disNone"></span>원
+            </div> -->
+
+        </div>
+
+        <hr>
+
+        <div class="teamBtn"> <!-- 버튼 모음 -->
+            <button class="btnSquad1 disNone" id="addMenu" >추가</button>
+            <button class="btnSquad1 disNone" id="deleteMenu">삭제</button>
+            <button class="btnSquad1 disNone" id="completeMenuChange" >종료</button>
+            <button class="btnSquad2" id="startMenuChange">수정</button>
+        </div>
+
+    </div>
+
+
+
+    <script src="./식당메뉴만들기.js"></script>
+</body>
+</html>
